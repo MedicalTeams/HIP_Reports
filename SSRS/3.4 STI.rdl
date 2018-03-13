@@ -2,10 +2,10 @@
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="devclinicdb">
+    <DataSource Name="HIP">
       <ConnectionProperties>
         <DataProvider>SQLAZURE</DataProvider>
-        <ConnectString>Data Source=mti-dev-db.database.windows.net;Initial Catalog=clinic-bd</ConnectString>
+        <ConnectString>Data Source=mti-hip-db.database.windows.net;Initial Catalog=Clinic</ConnectString>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>f2b09bec-a4f1-4c93-bd6f-958fbc2c3b2c</rd:DataSourceID>
@@ -14,7 +14,7 @@
   <DataSets>
     <DataSet Name="HIS_34">
       <Query>
-        <DataSourceName>devclinicdb</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -90,7 +90,7 @@
     </DataSet>
     <DataSet Name="Facility">
       <Query>
-        <DataSourceName>devclinicdb</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <CommandText>SELECT DISTINCT SETLMT + ' ' + HLTH_CARE_FACLTY FACILITY
 FROM LKUP_FACLTY
 WHERE FACLTY_STAT = 'A'
@@ -106,7 +106,7 @@ ORDER BY SETLMT + ' ' + HLTH_CARE_FACLTY ASC</CommandText>
     </DataSet>
     <DataSet Name="Visit">
       <Query>
-        <DataSourceName>devclinicdb</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <CommandText>SELECT DISTINCT RVISIT_DESCN FROM LKUP_RVISIT</CommandText>
       </Query>
       <Fields>
