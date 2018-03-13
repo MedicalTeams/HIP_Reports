@@ -2109,7 +2109,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Diagnosis.Value</Value>
+                              <Value>=Fields!STI_Category.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2140,7 +2140,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleRefugeeUnderEighteen.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&lt;18" And Fields!gndr_id.Value = 1, Fields!STI_Count.Value, 0))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2170,7 +2170,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleRefugeeUnderEighteen.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&lt;18" And Fields!gndr_id.Value = 2, Fields!STI_Count.Value, 0))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2200,7 +2200,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleRefugeeUnderEighteen.Value + Fields!FemaleRefugeeUnderEighteen.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&lt;18", Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2233,7 +2233,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleRefugeeEighteenOrOver.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&gt;18" And Fields!gndr_id.Value = 1, Fields!STI_Count.Value, 0))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2263,7 +2263,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleRefugeeEighteenOrOver.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&gt;18" And Fields!gndr_id.Value = 2, Fields!STI_Count.Value, 0))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2293,7 +2293,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleRefugeeUnderEighteen.Value + Fields!FemaleRefugeeUnderEighteen.Value + Fields!MaleRefugeeEighteenOrOver.Value + Fields!FemaleRefugeeEighteenOrOver.Value</Value>
+                              <Value>=Sum(VAL(IIF(Fields!bnfcry_id.Value = 2, Fields!STI_Count.Value,0)))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2326,7 +2326,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!RefugeeContacts.Value</Value>
+                              <Value>=Sum(VAL(IIF(Fields!bnfcry_id.Value = 2, Fields!STI_Contact_Trmnt_Count.Value,0)))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2359,7 +2359,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleNationalUnderEighteen.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&lt;18" And Fields!gndr_id.Value = 1, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2391,7 +2391,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleNationalUnderEighteen.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&lt;18" And Fields!gndr_id.Value = 2, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2423,7 +2423,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleNationalUnderEighteen.Value + Fields!FemaleNationalUnderEighteen.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&lt;18", Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2456,7 +2456,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleNationalEighteenOrOver.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&gt;18" And Fields!gndr_id.Value = 1, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2488,7 +2488,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleNationalEighteenOrOver.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&gt;18" And Fields!gndr_id.Value = 2, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2520,7 +2520,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleNationalUnderEighteen.Value + Fields!FemaleNationalUnderEighteen.Value + Fields!MaleNationalEighteenOrOver.Value + Fields!FemaleNationalEighteenOrOver.Value</Value>
+                              <Value>=Sum(VAL(IIF(Fields!bnfcry_id.Value = 1, Fields!STI_Count.Value,0)))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2553,7 +2553,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NationalContacts.Value</Value>
+                              <Value>=Sum(VAL(IIF(Fields!bnfcry_id.Value = 1, Fields!STI_Contact_Trmnt_Count.Value,0)))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -2624,7 +2624,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleRefugeeUnderEighteen.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&lt;18" And Fields!gndr_id.Value = 1, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2657,7 +2657,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleRefugeeUnderEighteen.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&lt;18" And Fields!gndr_id.Value = 2, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2690,7 +2690,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleRefugeeUnderEighteen.Value + Fields!FemaleRefugeeUnderEighteen.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&lt;18", Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2723,7 +2723,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleRefugeeEighteenOrOver.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&gt;18" And Fields!gndr_id.Value = 1, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2756,7 +2756,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleRefugeeEighteenOrOver.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&gt;18" And Fields!gndr_id.Value = 2, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2789,7 +2789,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleRefugeeUnderEighteen.Value + Fields!FemaleRefugeeUnderEighteen.Value + Fields!MaleRefugeeEighteenOrOver.Value + Fields!FemaleRefugeeEighteenOrOver.Value)</Value>
+                              <Value>=Sum(VAL(IIF(Fields!bnfcry_id.Value = 2, Fields!STI_Count.Value,0)))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2822,7 +2822,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!RefugeeContacts.Value)</Value>
+                              <Value>=Sum(VAL(IIF(Fields!bnfcry_id.Value = 2, Fields!STI_Contact_Trmnt_Count.Value,0)))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2855,7 +2855,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleNationalUnderEighteen.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&lt;18" And Fields!gndr_id.Value = 1, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2888,7 +2888,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleNationalUnderEighteen.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&lt;18" And Fields!gndr_id.Value = 2, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2921,7 +2921,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleNationalUnderEighteen.Value + Fields!FemaleNationalUnderEighteen.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&lt;18", Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2954,7 +2954,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleNationalEighteenOrOver.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&gt;18" And Fields!gndr_id.Value = 1, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -2987,7 +2987,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleNationalEighteenOrOver.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!age_range.Value = "&gt;18" And Fields!gndr_id.Value = 2, Fields!STI_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -3020,7 +3020,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleNationalUnderEighteen.Value + Fields!FemaleNationalUnderEighteen.Value + Fields!MaleNationalEighteenOrOver.Value + Fields!FemaleNationalEighteenOrOver.Value)</Value>
+                              <Value>=Sum(VAL(IIF(Fields!bnfcry_id.Value = 1, Fields!STI_Count.Value,0)))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -3053,7 +3053,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!NationalContacts.Value)</Value>
+                              <Value>=Sum(VAL(IIF(Fields!bnfcry_id.Value = 1, Fields!STI_Contact_Trmnt_Count.Value,0)))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -3121,12 +3121,12 @@
             <TablixMember>
               <Group Name="STI_Category2">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!Diagnosis.Value</GroupExpression>
+                  <GroupExpression>=Fields!STI_Category.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!SortId.Value</Value>
+                  <Value>=Fields!STI_Sort.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixMembers>
@@ -3139,6 +3139,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>SexuallyTransmittedInfection_34</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Setlmt_Faclty.Value</FilterExpression>
+            <Operator>In</Operator>
+            <FilterValues>
+              <FilterValue>=Parameters!Facility.Value</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>6.99479in</Top>
         <Left>0.62375in</Left>
         <Height>1.69792in</Height>
@@ -8450,6 +8459,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -9562,7 +9572,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!SortId.Value &amp; ". " &amp; Fields!Sup_Location.Value</Value>
+                              <Value>=Fields!Loc_Sort.Value &amp; ". " &amp; Fields!Injuries_Location.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -9593,7 +9603,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleRefugeeZeroToFour.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "0-4" And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -9623,7 +9633,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleRefugeeZeroToFour.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "0-4" And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -9653,7 +9663,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleRefugeeFiveToSeventeen.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "5-17" And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -9683,7 +9693,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleRefugeeFiveToSeventeen.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "5-17" And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -9713,7 +9723,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleRefugeeEighteenToFiftyNine.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "18-59" And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -9745,7 +9755,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleRefugeeEighteenToFiftyNine.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "18-59" And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -9777,7 +9787,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleRefugeeGreaterThanSixty.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&gt;=60" And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -9809,7 +9819,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleRefugeeGreaterThanSixty.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&gt;=60" And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -9841,7 +9851,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleRefugeeZeroToFour.Value + Fields!MaleRefugeeFiveToSeventeen.Value + Fields!MaleRefugeeEighteenToFiftyNine.Value + Fields!MaleRefugeeGreaterThanSixty.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -9874,7 +9884,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleRefugeeZeroToFour.Value + Fields!FemaleRefugeeFiveToSeventeen.Value + Fields!FemaleRefugeeEighteenToFiftyNine.Value + Fields!FemaleRefugeeGreaterThanSixty.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -9907,7 +9917,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleNationalAllAges.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -9939,7 +9949,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!FemaleNationalAllAges.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -9971,7 +9981,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MaleNationalAllAges.Value + Fields!FemaleNationalAllAges.Value</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                               </Style>
@@ -10042,7 +10052,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleRefugeeZeroToFour.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "0-4" And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10075,7 +10085,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleRefugeeZeroToFour.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "0-4" And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10108,7 +10118,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleRefugeeFiveToSeventeen.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "5-17" And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10141,7 +10151,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleRefugeeFiveToSeventeen.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "5-17" And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10174,7 +10184,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleRefugeeEighteenToFiftyNine.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "18-59" And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10207,7 +10217,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleRefugeeEighteenToFiftyNine.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "18-59" And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10240,7 +10250,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleRefugeeGreaterThanSixty.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&gt;=60" And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10273,7 +10283,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleRefugeeGreaterThanSixty.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!age_range.Value = "&gt;=60" And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10306,7 +10316,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleRefugeeZeroToFour.Value + Fields!MaleRefugeeFiveToSeventeen.Value + Fields!MaleRefugeeEighteenToFiftyNine.Value + Fields!MaleRefugeeGreaterThanSixty.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10339,7 +10349,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleRefugeeZeroToFour.Value + Fields!FemaleRefugeeFiveToSeventeen.Value + Fields!FemaleRefugeeEighteenToFiftyNine.Value + Fields!FemaleRefugeeGreaterThanSixty.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 2 And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10372,7 +10382,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleNationalAllAges.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!gndr_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10405,7 +10415,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!FemaleNationalAllAges.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1 And Fields!gndr_id.Value = 2, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10438,7 +10448,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!MaleNationalAllAges.Value + Fields!FemaleNationalAllAges.Value)</Value>
+                              <Value>=Sum(IIF(Fields!bnfcry_id.Value = 1, Fields!Injuries_Count.Value, 0))</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -10501,12 +10511,12 @@
             <TablixMember>
               <Group Name="Injuries_Location">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!Sup_Location.Value</GroupExpression>
+                  <GroupExpression>=Fields!Injuries_Location.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!SortId.Value</Value>
+                  <Value>=Fields!Loc_Sort.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixMembers>
@@ -10519,6 +10529,22 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Injuries_37b</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Setlmt_Faclty.Value</FilterExpression>
+            <Operator>In</Operator>
+            <FilterValues>
+              <FilterValue>=Parameters!Facility.Value</FilterValue>
+            </FilterValues>
+          </Filter>
+          <Filter>
+            <FilterExpression>=Fields!rvisit_descn.Value</FilterExpression>
+            <Operator>In</Operator>
+            <FilterValues>
+              <FilterValue>=Parameters!Visit.Value</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>14.54687in</Top>
         <Left>0.63417in</Left>
         <Height>1.44792in</Height>
@@ -12497,20 +12523,27 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="devclinicbd">
+    <DataSource Name="HIP">
       <ConnectionProperties>
         <DataProvider>SQLAZURE</DataProvider>
-        <ConnectString>Data Source=mti-dev-db.database.windows.net,1433;Initial Catalog=clinic-bd</ConnectString>
-        <Prompt>Specify a user name and password for data source devclinicbd:</Prompt>
+        <ConnectString>Data Source=mti-hip-db.database.windows.net;Initial Catalog=Clinic</ConnectString>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>c519f91d-5d8c-4c7d-93b3-e5edc24ae9fc</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="Admin">
+      <ConnectionProperties>
+        <DataProvider>SQLAZURE</DataProvider>
+        <ConnectString>Data Source=mti-dev-db.database.windows.net,1433;Initial Catalog=Clinic</ConnectString>
+      </ConnectionProperties>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>c5ee9e02-6276-4d15-a454-c1275bfeb78d</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Setlmt_Faclty">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <CommandText>SELECT DISTINCT SETLMT + ' ' + HLTH_CARE_FACLTY FACILITY
 FROM LKUP_FACLTY
 WHERE FACLTY_STAT = 'A'
@@ -12526,7 +12559,7 @@ ORDER BY SETLMT + ' ' + HLTH_CARE_FACLTY ASC</CommandText>
     </DataSet>
     <DataSet Name="Visit">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <CommandText>SELECT DISTINCT
 	rvisit_descn
 	,rvisit_id 
@@ -12546,7 +12579,7 @@ FROM
     </DataSet>
     <DataSet Name="Consultation_30">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -12603,7 +12636,7 @@ FROM
     </DataSet>
     <DataSet Name="Morbidity_32">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -12672,7 +12705,7 @@ FROM
     </DataSet>
     <DataSet Name="OutbreakAlertAndResponse_33">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -12773,7 +12806,7 @@ ORDER BY
     </DataSet>
     <DataSet Name="SexuallyTransmittedInfection_34">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -12789,70 +12822,78 @@ ORDER BY
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>sp34_Sexually_Transmitted_Infectionb</CommandText>
+        <CommandText>sp34_Sexually_Transmitted_Infection</CommandText>
       </Query>
       <Fields>
-        <Field Name="RowId">
-          <DataField>RowId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SortId">
-          <DataField>SortId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sub_DiagnosisId">
-          <DataField>Sub_DiagnosisId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Diagnosis">
-          <DataField>Diagnosis</DataField>
+        <Field Name="Dt">
+          <DataField>Dt</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="MaleRefugeeUnderEighteen">
-          <DataField>MaleRefugeeUnderEighteen</DataField>
+        <Field Name="setlmt">
+          <DataField>setlmt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="hlth_care_faclty">
+          <DataField>hlth_care_faclty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Setlmt_Faclty">
+          <DataField>Setlmt_Faclty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="rvisit_descn">
+          <DataField>rvisit_descn</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="rvisit_id">
+          <DataField>rvisit_id</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="STI_Sort">
+          <DataField>STI_Sort</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="STI_Category">
+          <DataField>STI_Category</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bnfcry">
+          <DataField>bnfcry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="gndr_cd">
+          <DataField>gndr_cd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bnfcry_id">
+          <DataField>bnfcry_id</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="age_range">
+          <DataField>age_range</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Age_Sort">
+          <DataField>Age_Sort</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="FemaleRefugeeUnderEighteen">
-          <DataField>FemaleRefugeeUnderEighteen</DataField>
+        <Field Name="gndr_id">
+          <DataField>gndr_id</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="STI_Count">
+          <DataField>STI_Count</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="MaleRefugeeEighteenOrOver">
-          <DataField>MaleRefugeeEighteenOrOver</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FemaleRefugeeEighteenOrOver">
-          <DataField>FemaleRefugeeEighteenOrOver</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="MaleNationalUnderEighteen">
-          <DataField>MaleNationalUnderEighteen</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FemaleNationalUnderEighteen">
-          <DataField>FemaleNationalUnderEighteen</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="MaleNationalEighteenOrOver">
-          <DataField>MaleNationalEighteenOrOver</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FemaleNationalEighteenOrOver">
-          <DataField>FemaleNationalEighteenOrOver</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RefugeeContacts">
-          <DataField>RefugeeContacts</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="NationalContacts">
-          <DataField>NationalContacts</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="STI_Contact_Trmnt_Count">
+          <DataField>STI_Contact_Trmnt_Count</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
     <DataSet Name="ChronicDisease_35">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -12931,7 +12972,7 @@ ORDER BY
     </DataSet>
     <DataSet Name="MentalHealth_36">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -13010,7 +13051,7 @@ ORDER BY
     </DataSet>
     <DataSet Name="Injuries_37a">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -13089,7 +13130,7 @@ ORDER BY
     </DataSet>
     <DataSet Name="Injuries_37b">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -13105,63 +13146,71 @@ ORDER BY
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>sp37_Injuries_b2</CommandText>
+        <CommandText>sp37_Injuries_b</CommandText>
       </Query>
       <Fields>
-        <Field Name="RowId">
-          <DataField>RowId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SortId">
-          <DataField>SortId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sup_LocationId">
-          <DataField>Sup_LocationId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sup_Location">
-          <DataField>Sup_Location</DataField>
+        <Field Name="Dt">
+          <DataField>Dt</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="MaleRefugeeZeroToFour">
-          <DataField>MaleRefugeeZeroToFour</DataField>
+        <Field Name="setlmt">
+          <DataField>setlmt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="hlth_care_faclty">
+          <DataField>hlth_care_faclty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Setlmt_Faclty">
+          <DataField>Setlmt_Faclty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="rvisit_descn">
+          <DataField>rvisit_descn</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="rvisit_id">
+          <DataField>rvisit_id</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Loc_Sort">
+          <DataField>Loc_Sort</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Injuries_Mode">
+          <DataField>Injuries_Mode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Injuries_Location">
+          <DataField>Injuries_Location</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bnfcry">
+          <DataField>bnfcry</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="gndr_cd">
+          <DataField>gndr_cd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bnfcry_id">
+          <DataField>bnfcry_id</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="age_range">
+          <DataField>age_range</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Age_Sort">
+          <DataField>Age_Sort</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="MaleRefugeeFiveToSeventeen">
-          <DataField>MaleRefugeeFiveToSeventeen</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="gndr_id">
+          <DataField>gndr_id</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="MaleRefugeeEighteenToFiftyNine">
-          <DataField>MaleRefugeeEighteenToFiftyNine</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="MaleRefugeeGreaterThanSixty">
-          <DataField>MaleRefugeeGreaterThanSixty</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="MaleNationalAllAges">
-          <DataField>MaleNationalAllAges</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FemaleRefugeeZeroToFour">
-          <DataField>FemaleRefugeeZeroToFour</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FemaleRefugeeFiveToSeventeen">
-          <DataField>FemaleRefugeeFiveToSeventeen</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FemaleRefugeeEighteenToFiftyNine">
-          <DataField>FemaleRefugeeEighteenToFiftyNine</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FemaleRefugeeGreaterThanSixty">
-          <DataField>FemaleRefugeeGreaterThanSixty</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="FemaleNationalAllAges">
-          <DataField>FemaleNationalAllAges</DataField>
+        <Field Name="Injuries_Count">
+          <DataField>Injuries_Count</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>

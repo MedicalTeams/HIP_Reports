@@ -967,10 +967,10 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="devclinicbd">
+    <DataSource Name="HIP">
       <ConnectionProperties>
         <DataProvider>SQLAZURE</DataProvider>
-        <ConnectString>Data Source=mti-dev-db.database.windows.net,1433;Initial Catalog=clinic-bd</ConnectString>
+        <ConnectString>Data Source=mti-hip-db.database.windows.net;Initial Catalog=Clinic</ConnectString>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>5e533c57-1722-4669-a510-8cb31c7b4753</rd:DataSourceID>
@@ -979,7 +979,7 @@
   <DataSets>
     <DataSet Name="HIS_31">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -1039,7 +1039,7 @@
     </DataSet>
     <DataSet Name="Setlmt_Faclty">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <CommandText>SELECT DISTINCT SETLMT + ' ' + HLTH_CARE_FACLTY FACILITY
 FROM LKUP_FACLTY
 WHERE FACLTY_STAT = 'A'
@@ -1056,7 +1056,7 @@ ORDER BY SETLMT + ' ' + HLTH_CARE_FACLTY ASC</CommandText>
     </DataSet>
     <DataSet Name="Visit">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <CommandText>SELECT DISTINCT RVISIT_DESCN FROM LKUP_RVISIT</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>

@@ -3815,6 +3815,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4956,19 +4957,19 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="devclinicbd">
+    <DataSource Name="Dev">
       <ConnectionProperties>
         <DataProvider>SQLAZURE</DataProvider>
-        <ConnectString>Data Source=mti-dev-db.database.windows.net;Initial Catalog=clinic-bd</ConnectString>
+        <ConnectString>Data Source=mti-dev-db.database.windows.net,1433;Initial Catalog=Clinic</ConnectString>
       </ConnectionProperties>
-      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>adbbeb88-2ebb-46e5-883e-51d236e8beb2</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Tally_Details">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>Dev</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -5176,7 +5177,7 @@
     </DataSet>
     <DataSet Name="Settlement">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>Dev</DataSourceName>
         <CommandText>SELECT DISTINCT SETLMT + ' ' + HLTH_CARE_FACLTY FACILITY
 FROM LKUP_FACLTY
 WHERE FACLTY_STAT = 'A'
@@ -5193,7 +5194,7 @@ ORDER BY SETLMT + ' ' + HLTH_CARE_FACLTY ASC</CommandText>
     </DataSet>
     <DataSet Name="Visit_Type">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>Dev</DataSourceName>
         <CommandText>SELECT DISTINCT RVISIT_DESCN FROM LKUP_RVISIT</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>

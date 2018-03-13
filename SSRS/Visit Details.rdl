@@ -169,7 +169,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox5">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -344,7 +344,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox7">
+                    <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -519,7 +519,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox10">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -594,7 +594,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="staff_mbr_name">
+                    <Textbox Name="staff_mbr_name2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -628,7 +628,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="opd_id">
+                    <Textbox Name="opd_id2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1002,17 +1002,16 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Office_Visit_ID">
+                    <Textbox Name="office_visit_id2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Office_Visit_ID.Value</Value>
+                              <Value>=Fields!office_visit_id.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
-                                <Format>0;(0)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1021,7 +1020,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Office_Visit_ID</rd:DefaultName>
+                      <rd:DefaultName>office_visit_id</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1133,19 +1132,19 @@
               <RepeatOnNewPage>true</RepeatOnNewPage>
             </TablixMember>
             <TablixMember>
-              <Group Name="Details" />
+              <Group Name="Details2" />
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>QA</DataSetName>
+        <DataSetName>Data</DataSetName>
         <SortExpressions>
           <SortExpression>
             <Value>=Fields!rec_creat_dt.Value</Value>
             <Direction>Descending</Direction>
           </SortExpression>
         </SortExpressions>
-        <Top>0.18578in</Top>
-        <Left>0.06958in</Left>
+        <Top>0.22569in</Top>
+        <Left>0.11181in</Left>
         <Height>0.5in</Height>
         <Width>16.18959in</Width>
         <Style>
@@ -1155,54 +1154,60 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.19792in</Height>
+    <Height>2in</Height>
     <Style />
   </Body>
-  <Width>17.31125in</Width>
+  <Width>17.34584in</Width>
   <Page>
     <PageHeader>
-      <Height>1.10292in</Height>
+      <Height>1.1875in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox1">
+        <Textbox Name="Textbox15">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Label>Report_Title</Label>
-                  <Value>="Visit Details Report"</Value>
+                  <Value>Number of Records: </Value>
                   <Style>
-                    <FontWeight>Bold</FontWeight>
+                    <FontSize>9pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=CountRows("Data")</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
+              <Style />
             </Paragraph>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Label>Reporting_Period</Label>
-                  <Value />
+                  <Value>Pages </Value>
                   <Style>
-                    <FontWeight>Bold</FontWeight>
+                    <FontSize>9pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>= Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
+              <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.43056in</Top>
-          <Left>3.52792in</Left>
-          <Height>0.5in</Height>
-          <Width>5.96875in</Width>
+          <rd:DefaultName>Textbox6</rd:DefaultName>
+          <Top>0.55568in</Top>
+          <Left>12.40833in</Left>
+          <Height>0.45833in</Height>
+          <Width>1.82083in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1272,8 +1277,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>0.43056in</Top>
-          <Left>0.06958in</Left>
+          <Top>0.55568in</Top>
+          <Left>0.11458in</Left>
           <Height>0.32973in</Height>
           <Width>1.90625in</Width>
           <ZIndex>1</ZIndex>
@@ -1287,62 +1292,7 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox6">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Number of Records: </Value>
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>=CountRows("QA")</Value>
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Pages </Value>
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>= Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
-                  <Style>
-                    <FontSize>9pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>0.43056in</Top>
-          <Left>12.49042in</Left>
-          <Height>0.45833in</Height>
-          <Width>1.82083in</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox14">
+        <Textbox Name="Textbox16">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -1363,10 +1313,59 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.74589in</Top>
-          <Left>4.10285in</Left>
+          <Top>0.81658in</Top>
+          <Left>3.99514in</Left>
           <Height>0.34314in</Height>
           <Width>4.81389in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>Report_Title</Label>
+                  <Value>="Visit Details Report"</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>Reporting_Period</Label>
+                  <Value />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.55568in</Top>
+          <Left>3.29271in</Left>
+          <Height>0.5in</Height>
+          <Width>5.96875in</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -1395,40 +1394,89 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="devclinicbd">
+    <DataSource Name="DataSource1">
       <ConnectionProperties>
         <DataProvider>SQLAZURE</DataProvider>
-        <ConnectString>Data Source=mti-dev-db.database.windows.net;Initial Catalog=clinic-bd</ConnectString>
+        <ConnectString>Data Source=mti-hip-db.database.windows.net;Initial Catalog=Clinic</ConnectString>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>5a03661d-396b-4f0a-8244-31de01e4b953</rd:DataSourceID>
+      <rd:DataSourceID>4819f84a-1cea-4443-99d8-5e175d236fac</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="QA">
+    <DataSet Name="Data">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>DataSource1</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@STAFF_MBR">
-            <Value>=JOIN(Parameters!STAFF_MBR.Value, ",")</Value>
-          </QueryParameter>
-          <QueryParameter Name="@End_Date">
-            <Value>=Parameters!End_Date.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
           <QueryParameter Name="@OPD_ID">
             <Value>=Parameters!OPD_ID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@End_Date">
+            <Value>=Parameters!End_Date.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@STAFF_MBR">
+            <Value>=Parameters!STAFF_MBR.Value</Value>
             <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
-        <CommandType>StoredProcedure</CommandType>
-        <CommandText>spVisit_Details</CommandText>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+SET NOCOUNT ON;
+
+--Visit Details
+--DECLARE @Begin_Visit_Date AS DATETIME2 = '2018-02-07'
+--DECLARE @End_Date AS DATETIME2 = '2018-02-08'
+--DECLARE @STAFF_MBR AS NVARCHAR(MAX)
+--DECLARE @OPD_ID AS VARCHAR (MAX)
+
+--SET @End_Date = CAST(@End_Date AS DATE) 
+--SET @End_Date= DATEADD(ns, -100, DATEADD(s, 86400, @End_Date))
+--SET @OPD_ID = 'ALL'
+
+	SELECT
+	o.ov_id AS 'office_visit_id'
+	,o.staff_mbr_name
+	,CAST(o.opd_id AS VARCHAR) opd_id
+	,o.age_years_low
+	,o.dt_of_visit
+	,r.rvisit_descn
+	,g.gndr_descn
+	,b.bnfcry
+	,f.setlmt + ' ' + f.hlth_care_faclty AS 'Settlement and Facility'
+	,o.rec_creat_dt
+	,d.diag_descn
+	,ds.splmtl_diag_descn
+	,dc.splmtl_diag_cat
+	,od.oth_diag_descn
+	,od.oth_splmtl_diag_descn
+
+FROM
+	dbo.ov AS o 
+	JOIN dbo.ov_diag AS od ON o.ov_id = od.ov_id
+	JOIN dbo.lkup_diag AS d ON od.diag_id = d.diag_id
+	JOIN dbo.lkup_gndr AS g ON o.gndr_id = g.gndr_id
+	JOIN dbo.lkup_rvisit AS r ON o.rvisit_id = r.rvisit_id
+	JOIN dbo.lkup_bnfcry AS b ON o.bnfcry_id = b.bnfcry_id
+	JOIN dbo.lkup_faclty AS f ON o.faclty_id = f.faclty_id
+	LEFT OUTER JOIN lkup_splmtl_diag AS ds ON od.splmtl_diag_id = ds.splmtl_diag_id
+	LEFT OUTER JOIN lkup_splmtl_diag_cat AS dc ON od.splmtl_diag_cat_id = dc.splmtl_diag_cat_id
+
+WHERE 
+	1=1
+	AND o.staff_mbr_name IN (@STAFF_MBR)
+	--AND o.staff_mbr_name IN (SELECT Value FROM fnSplit(@STAFF_MBR, ','))
+	--AND CAST(o.opd_id AS VARCHAR)  IN (@OPD_ID)
+	AND (CAST(o.opd_id AS VARCHAR) IN (@OPD_ID) OR ('ALL' IN (@OPD_ID)))
+	AND o.dt_of_visit &gt;= @Begin_Visit_Date AND o.dt_of_visit &lt;= (@End_Date + '23:59:59')</CommandText>
+        <Timeout>7</Timeout>
       </Query>
       <Fields>
-        <Field Name="Office_Visit_ID">
-          <DataField>Office Visit ID</DataField>
+        <Field Name="office_visit_id">
+          <DataField>office_visit_id</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="staff_mbr_name">
@@ -1489,9 +1537,9 @@
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="STAFF_MBR">
+    <DataSet Name="Staff">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>DataSource1</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 
 SELECT 
@@ -1514,7 +1562,7 @@ ORDER BY
   <ReportParameters>
     <ReportParameter Name="Begin_Visit_Date">
       <DataType>DateTime</DataType>
-      <Prompt>Begin Visit Date</Prompt>
+      <Prompt>Begin Date:</Prompt>
     </ReportParameter>
     <ReportParameter Name="End_Date">
       <DataType>DateTime</DataType>
@@ -1525,7 +1573,7 @@ ORDER BY
       <Prompt>Staff Member</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>STAFF_MBR</DataSetName>
+          <DataSetName>Staff</DataSetName>
           <ValueField>staff_mbr_name</ValueField>
           <LabelField>staff_mbr_name</LabelField>
         </DataSetReference>
@@ -1539,9 +1587,9 @@ ORDER BY
           <Value>ALL</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Enter OPD ID or ALL</Prompt>
+      <Prompt>OPD ID</Prompt>
     </ReportParameter>
   </ReportParameters>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>d1c817ea-92e3-4662-80a6-28ba4ca40340</rd:ReportID>
+  <rd:ReportID>2acc3911-9dbd-43f3-917f-b992c49562c6</rd:ReportID>
 </Report>

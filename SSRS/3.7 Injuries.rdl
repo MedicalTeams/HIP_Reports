@@ -2,11 +2,10 @@
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="devclinicbd">
+    <DataSource Name="HIP">
       <ConnectionProperties>
         <DataProvider>SQLAZURE</DataProvider>
-        <ConnectString>Data Source=mti-hip-db.database.windows.net;Initial Catalog=clinic-bd</ConnectString>
-        <Prompt>Specify a user name and password for data source HIP:</Prompt>
+        <ConnectString>Data Source=mti-hip-db.database.windows.net;Initial Catalog=Clinic</ConnectString>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>80096790-6feb-4d51-ad14-d71b570a0621</rd:DataSourceID>
@@ -15,7 +14,7 @@
   <DataSets>
     <DataSet Name="Injuries_37a">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
@@ -91,7 +90,7 @@
     </DataSet>
     <DataSet Name="Facility">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <CommandText>SELECT DISTINCT SETLMT + ' ' + HLTH_CARE_FACLTY FACILITY
 FROM LKUP_FACLTY
 WHERE FACLTY_STAT = 'A'
@@ -107,7 +106,7 @@ ORDER BY SETLMT + ' ' + HLTH_CARE_FACLTY ASC</CommandText>
     </DataSet>
     <DataSet Name="Visit">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <CommandText>SELECT DISTINCT RVISIT_DESCN FROM LKUP_RVISIT</CommandText>
       </Query>
       <Fields>
@@ -119,7 +118,7 @@ ORDER BY SETLMT + ' ' + HLTH_CARE_FACLTY ASC</CommandText>
     </DataSet>
     <DataSet Name="Injuries_37b">
       <Query>
-        <DataSourceName>devclinicbd</DataSourceName>
+        <DataSourceName>HIP</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@Begin_Visit_Date">
             <Value>=Parameters!Begin_Visit_Date.Value</Value>
